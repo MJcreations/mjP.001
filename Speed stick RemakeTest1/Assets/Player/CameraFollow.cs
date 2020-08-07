@@ -16,24 +16,23 @@ public class CameraFollow : MonoBehaviour
     void Update()
     {
         Following();
-        /* if (Player.position.x >= FirstPoint.x)
+        if (Player.position.x >= FirstPoint.x)
          {
-             FollowX = true;
+            Following();
          }
          else {
              if (Player.position.x < FirstPoint.x)
              {
-                 FollowX = false;
+                Stop();
              }
          }
-
-         if (FollowX == true)
-         {
-             Following();
-         }*/
     }
     void Following()
     {
-        transform.position = new Vector3(Player.position.x, Player.position.y, -10f);
+        transform.position = new Vector3(Player.position.x, 0f, -10f);
+    }
+    void Stop()
+    {
+        transform.position = new Vector3(0f, 0f, -10f);
     }
 }
